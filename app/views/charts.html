@@ -14,7 +14,7 @@
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-user"></i> EGrappler.com <b class="caret"></b></a>
+                            class="icon-user"></i> N2qv1994 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="javascript:;">Profile</a></li>
                             <li><a href="javascript:;">Logout</a></li>
@@ -60,7 +60,7 @@
     <!-- /subnavbar-inner -->
 </div>
 <!-- /subnavbar -->
-<div class="main">
+<div class="main" style="height:500px">
     <div class="main-inner">
         <div class="" style="margin-left:50px">
             <div class="row">
@@ -69,7 +69,7 @@
                         <div class="widget-header">
                             <i class="icon-bar-chart"></i>
                             <h3>
-                                    Bar Chart</h3>
+                                    Người dùng</h3>
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
@@ -80,34 +80,10 @@
                         <!-- /widget-content -->
                     </div>
                     <!-- /widget -->
-                    <div class="widget">
-                        <div class="widget-header">
-                            <i class="icon-bar-chart"></i>
-                            <h3>
-                                    Line Chart</h3>
-                        </div>
-                        <!-- /widget-header -->
-                        <div class="widget-content">
-                            <canvas id="area-chart" class="chart-holder" width="538" height="250">
-                            </canvas>
-                            <!-- /line-chart -->
-                        </div>
-                        <!-- /widget-content -->
-                    </div>
                     <!-- /widget -->
                     <div class="widget">
-                        <div class="widget-header">
-                            <i class="icon-bar-chart"></i>
-                            <h3>
-                                    Pie Chart</h3>
-                        </div>
-                        <!-- /widget-header -->
-                        <div class="widget-content">
-                            <canvas id="pie-chart" class="chart-holder" width="538" height="250">
-                            </canvas>
-                            <!-- /pie-chart -->
-                        </div>
-                        <!-- /widget-content -->
+                        <button class="btn" style="background-color: #DCDCDC;width: 50px;height:18px"></button> Khách hàng<br>
+                        <button class="btn" style="background-color: #97bbcd ;width: 50px;height:18px"></button> Nhà cung cấp
                     </div>
                     <!-- /widget -->
                 </div>
@@ -117,7 +93,7 @@
                         <div class="widget-header">
                             <i class="icon-bar-chart"></i>
                             <h3>
-                                    Donut Chart</h3>
+                                    Loại mặt hàng</h3>
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
@@ -129,18 +105,11 @@
                     </div>
                     <!-- /widget -->
                     <div class="widget">
-                        <div class="widget-header">
-                            <i class="icon-bar-chart"></i>
-                            <h3>
-                                    A Chart</h3>
-                        </div>
-                        <!-- /widget-header -->
-                        <div class="widget-content">
-                            <canvas id="line-chart" class="chart-holder" width="538" height="250">
-                            </canvas>
-                            <!-- /-chart -->
-                        </div>
-                        <!-- /widget-content -->
+                        <button class="btn" style="background-color: #66c2ff;width: 50px;height:18px"></button> Hải sản<br>
+                        <button class="btn" style="background-color: #ff0000 ;width: 50px;height:18px"></button> Thịt<br>
+                        <button class="btn" style="background-color: #008000;width: 50px;height:18px"></button> Rau củ<br>
+                        <button class="btn" style="background-color: #1aff1a ;width: 50px;height:18px"></button> Trái cây<br>
+                        <button class="btn" style="background-color: #ffff1a ;width: 50px;height:18px"></button> Mặt hàng khác<br>
                     </div>
                     <!-- /widget -->
                 </div>
@@ -154,20 +123,20 @@
 </div>
 <script type="text/javascript">
 var doughnutData = [{
-        value: 30,
-        color: "#F7464A"
+        value: 150,
+        color: "#008000"
     }, {
-        value: 50,
-        color: "#46BFBD"
+        value: 80,
+        color: "#ff0000"
     }, {
         value: 100,
-        color: "#FDB45C"
-    }, {
-        value: 40,
-        color: "#949FB1"
+        color: "#66c2ff"
     }, {
         value: 120,
-        color: "#4D5360"
+        color: "#1aff1a"
+    }, {
+        value: 10,
+        color: "#ffff1a"
     }
 
 ];
@@ -175,78 +144,22 @@ var doughnutData = [{
 var myDoughnut = new Chart(document.getElementById("donut-chart").getContext("2d")).Doughnut(doughnutData);
 
 
-var lineChartData = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [{
-        fillColor: "rgba(220,220,220,0.5)",
-        strokeColor: "rgba(220,220,220,1)",
-        pointColor: "rgba(220,220,220,1)",
-        pointStrokeColor: "#fff",
-        data: [65, 59, 90, 81, 56, 55, 40]
-    }, {
-        fillColor: "rgba(151,187,205,0.5)",
-        strokeColor: "rgba(151,187,205,1)",
-        pointColor: "rgba(151,187,205,1)",
-        pointStrokeColor: "#fff",
-        data: [28, 48, 40, 19, 96, 27, 100]
-    }]
-
-}
-
-var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
-
 
 var barChartData = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [{
         fillColor: "rgba(220,220,220,0.5)",
         strokeColor: "rgba(220,220,220,1)",
-        data: [65, 59, 90, 81, 56, 55, 40]
+        data: [35, 39, 54, 65, 53, 70, 80]
     }, {
         fillColor: "rgba(151,187,205,0.5)",
         strokeColor: "rgba(151,187,205,1)",
-        data: [28, 48, 40, 19, 96, 27, 100]
+        data: [40, 58, 60, 80, 96, 90, 120]
     }]
 
 }
 
 var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
-
-var pieData = [{
-        value: 30,
-        color: "#F38630"
-    }, {
-        value: 50,
-        color: "#E0E4CC"
-    }, {
-        value: 100,
-        color: "#69D2E7"
-    }
-
-];
-
-var myPie = new Chart(document.getElementById("pie-chart").getContext("2d")).Pie(pieData);
-
-var chartData = [{
-    value: Math.random(),
-    color: "#D97041"
-}, {
-    value: Math.random(),
-    color: "#C7604C"
-}, {
-    value: Math.random(),
-    color: "#21323D"
-}, {
-    value: Math.random(),
-    color: "#9D9B7F"
-}, {
-    value: Math.random(),
-    color: "#7D4F6D"
-}, {
-    value: Math.random(),
-    color: "#584A5E"
-}];
-var myPolarArea = new Chart(document.getElementById("line-chart").getContext("2d")).PolarArea(chartData);
 </script>
 </body>
 
