@@ -2,16 +2,16 @@
 
 /**
  * @ngdoc function
- * @name bkfoodadminApp.controller:ApptourCtrl
+ * @name bkfoodadminApp.controller:AdminCtrl
  * @description
- * # ApptourCtrl
+ * # AdminCtrl
  * Controller of the bkfoodadminApp
  */
 angular.module('bkfoodadminApp')
-    .controller('ApptourCtrl', function($scope) {
-        var user_id = "";
+    .controller('AdminCtrl', function($scope) {
+        // $scope.moderators = "";
         $.ajax({
-            url: "http://localhost:3000/api/getallusers",
+            url: "http://localhost:3000/api/getallmod",
             type: "get",
             headers: {
                 'Content-Type': 'application/json'
@@ -19,18 +19,9 @@ angular.module('bkfoodadminApp')
             dataType: "json",
             success: function(result) {
                 console.log(result);
-                var _customer = [];
-                var _provider = [];
-                for (var i = 0; i < result.length; i++) {
-                    if (result[i].role == true) {
-                        _provider.push(result[i]);
-                    } else {
-                        _customer.push(result[i]);
-                    }
-                }
                 $scope.$apply(function() {
-                    $scope.customers = _customer;
-                    $scope.providers = _provider;
+                    $scope.moderators = result;
+                    console.log("a" + $scope.moderators);
                 });
 
             },
@@ -43,17 +34,9 @@ angular.module('bkfoodadminApp')
             }
         });
 
-        $scope.detele_user = function(userid) {
-            user_id = userid;
-            $("#deleteModal").modal('show');
-
-
-
-
-        }
-        $("#delete_user").on('click', function() {
+        $scope.detele_mod = function(userid) {
             $.ajax({
-                url: "http://localhost:3000/api/deleteuser/" + user_id,
+                url: "http://localhost:3000/api/deletemod/" + userid,
                 type: "get",
                 headers: {
                     'Content-Type': 'application/json'
@@ -61,7 +44,7 @@ angular.module('bkfoodadminApp')
                 dataType: "json",
                 success: function(result) {
                     console.log(result);
-                    $("#" + user_id).remove();
+                    $("#" + userid).remove();
                 },
                 error: function(result) {
                     // $rootScope.message_res = result.responseText;
@@ -70,5 +53,6 @@ angular.module('bkfoodadminApp')
                     console.log("err");
                 }
             });
-        });
+
+        }
     });

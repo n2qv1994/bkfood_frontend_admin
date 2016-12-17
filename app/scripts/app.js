@@ -59,6 +59,16 @@ angular
         controller: 'ManagementCtrl',
         controllerAs: 'management'
       })
+      .when('/admin', {
+        templateUrl: 'views/admin.html',
+        controller: 'AdminCtrl',
+        controllerAs: 'admin'
+      })
+      .when('/addmod', {
+        templateUrl: 'views/addmod.html',
+        controller: 'AddmodCtrl',
+        controllerAs: 'addmod'
+      })
       .otherwise({
         redirectTo: '/'
       });

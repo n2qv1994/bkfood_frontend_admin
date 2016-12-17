@@ -49,10 +49,10 @@
             <ul class="mainnav">
                 <li><a ng-href="/#!/home"><i class="icon-dashboard"></i><span>Trang chủ</span> </a> </li>
                 <li><a href="/#!/report"><i class="icon-list-alt"></i><span>Thống kê</span> </a> </li>
-                <li class="active"><a href="/#!/apptour"><i class="shortcut-icon icon-user"></i><span>Người dùng</span> </a></li>
+                <li><a href="/#!/apptour"><i class="shortcut-icon icon-user"></i><span>Người dùng</span> </a></li>
                 <li><a href="/#!/charts"><i class="icon-bar-chart"></i><span>Biểu đồ</span> </a> </li>
                 <li><a href="/#!/management"><i class="icon-code"></i><span>Mặt hàng</span> </a> </li>
-                <li><a href="/#!/admin"><i class="icon-long-arrow-down"></i><span>Admin</span> </a> </li>
+                <li class="active"><a href="/#!/admin"><i class="icon-long-arrow-down"></i><span>Admin</span> </a> </li>
                 <li><a href="/#!/addmod"><i class="icon-long-arrow-down"></i><span>AddMod</span></a> </li>
             </ul>
         </div>
@@ -66,78 +66,32 @@
         <div class="">
             <div class="row">
                 <div class="alert alert-success">
-                    <strong>Provider!</strong>
+                    <strong>Moderator!</strong>
                 </div>
-                <div ng-repeat="provider in providers" id="{{provider._id}}">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href=".{{provider._id}}">{{provider.name}}</a>
+                <div class="panel panel-default" ng-repeat="mod in moderators" id="{{mod._id}}">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href=".{{mod._id}}">{{mod.username}}</a>
         </h4>
-                        </div>
-                        <div class="panel-collapse collapse {{provider._id}}">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Username</th>
-                                        <th>Location</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Avatar</th>
-                                        <th>Option</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{provider.name}}</td>
-                                        <td>{{provider.username}}</td>
-                                        <td>{{provider.location}}</td>
-                                        <td>{{provider.email}}</td>
-                                        <td>{{provider.phone}}</td>
-                                        <td>{{provider.avatar}}</td>
-                                        <td>
-                                            <button class="btn btn-danger" ng-click="detele_user(provider._id)">Delete</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
-                </div>
-                <div class="alert alert-info">
-                    <strong>Customer</strong>
-                </div>
-                <div ng-repeat="customer in customers" id="{{customer._id}}">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href=".{{customer._id}}">{{customer.name}}</a>
-        </h4>
-                        </div>
-                        <div class="panel-collapse collapse {{customer._id}}">
+                    <div class="panel-collapse collapse {{mod._id}}">
+                        <div class="panel-body">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
                                         <th>Username</th>
-                                        <th>Location</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Avatar</th>
+                                        <th>Password</th>
+                                        <th>Category</th>
                                         <th>Option</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>{{customer.name}}</td>
-                                        <td>{{customer.username}}</td>
-                                        <td>{{customer.location}}</td>
-                                        <td>{{customer.email}}</td>
-                                        <td>{{customer.phone}}</td>
-                                        <td>{{customer.avatar}}</td>
+                                        <td>{{mod.username}}</td>
+                                        <td>{{mod.password}}</td>
+                                        <td>{{mod.category}}</td>
                                         <td>
-                                            <button class="btn btn-danger" ng-click="detele_user(customer._id)">Delete</button>
+                                            <button class="btn btn-danger" ng-click="detele_mod(mod._id)">Delete</button>
                                         </td>
                                     </tr>
                                 </tbody>
