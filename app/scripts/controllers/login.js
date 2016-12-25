@@ -8,13 +8,16 @@
  * Controller of the bkfoodadminApp
  */
 angular.module('bkfoodadminApp')
-    .controller('LoginCtrl', function($scope, $location) {
+    .controller('LoginCtrl', function($scope, $location, $rootScope) {
         $scope.login1 = function() {
-        	console.log("login");
-        	console.log($("#username").val());
             var data = {
                 username: $("#username").val(),
                 password: $("#password").val()
+            };
+            if ($("#username").val() == 'admin') {
+                
+                     $rootScope.admin = 'admin';
+                
             };
             $.ajax({
                 url: "http://localhost:3000/api/signin",
@@ -25,7 +28,6 @@ angular.module('bkfoodadminApp')
                 },
                 dataType: "json",
                 success: function(result) {
-                	console.log("success");
                 	console.log(result);
                 	$location.path("/home");
                 },

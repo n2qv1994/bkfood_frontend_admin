@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
             </a>
             <a class="brand" href="index.html">
-                Bootstrap Admin Template                
+                BK_Food Frontend Admin                 
             </a>
             <div class="nav-collapse">
                 <ul class="nav pull-right">
@@ -52,8 +52,8 @@
                 <li class="active"><a href="/#!/apptour"><i class="shortcut-icon icon-user"></i><span>Người dùng</span> </a></li>
                 <li><a href="/#!/charts"><i class="icon-bar-chart"></i><span>Biểu đồ</span> </a> </li>
                 <li><a href="/#!/management"><i class="icon-code"></i><span>Mặt hàng</span> </a> </li>
-                <li><a href="/#!/admin"><i class="icon-long-arrow-down"></i><span>Admin</span> </a> </li>
-                <li><a href="/#!/addmod"><i class="icon-long-arrow-down"></i><span>AddMod</span></a> </li>
+                <li class="admin" style="display:none"><a href="/#!/admin"><img src="images/admin.png" style="width:25px;height:25px; margin-top:10px"></i><span>Admin</span> </a> </li>
+                <li class="admin" style="display:none"><a href="/#!/addmod"><img src="images/addMod.png" style="width:25px;height:25px; margin-top:10px"><span>AddMod</span></a> </li>
             </ul>
         </div>
         <!-- /container -->
@@ -153,22 +153,3 @@
     <!-- /main-inner -->
 </div>
 <!-- /main -->
-<div class="modal fade" id="deleteModal" role="dialog">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Delete account</h4>
-            </div>
-            <div class="modal-body">
-                <div class="alert alert-danger" style="display:none" id="notify_management">
-                    <strong>Do you want to detele this account?</strong>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="delete_user">Delete</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>

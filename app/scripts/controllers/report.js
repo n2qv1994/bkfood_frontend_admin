@@ -8,10 +8,8 @@
  * Controller of the bkfoodadminApp
  */
 angular.module('bkfoodadminApp')
-  .controller('ReportCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('ReportCtrl', function($rootScope) {
+        if ($rootScope.admin == 'admin') {
+            $('.admin').show();
+        }
+    });

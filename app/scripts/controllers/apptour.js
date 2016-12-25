@@ -8,8 +8,10 @@
  * Controller of the bkfoodadminApp
  */
 angular.module('bkfoodadminApp')
-    .controller('ApptourCtrl', function($scope) {
-        var user_id = "";
+    .controller('ApptourCtrl', function($scope, $rootScope) {
+        if ($rootScope.admin == 'admin') {
+            $('.admin').show();
+        }
         $.ajax({
             url: "http://localhost:3000/api/getallusers",
             type: "get",
@@ -44,16 +46,8 @@ angular.module('bkfoodadminApp')
         });
 
         $scope.detele_user = function(userid) {
-            user_id = userid;
-            $("#deleteModal").modal('show');
-
-
-
-
-        }
-        $("#delete_user").on('click', function() {
             $.ajax({
-                url: "http://localhost:3000/api/deleteuser/" + user_id,
+                url: "http://localhost:3000/api/deleteuser/" + userid,
                 type: "get",
                 headers: {
                     'Content-Type': 'application/json'
@@ -61,7 +55,7 @@ angular.module('bkfoodadminApp')
                 dataType: "json",
                 success: function(result) {
                     console.log(result);
-                    $("#" + user_id).remove();
+                    $("#" + userid).remove();
                 },
                 error: function(result) {
                     // $rootScope.message_res = result.responseText;
@@ -70,5 +64,5 @@ angular.module('bkfoodadminApp')
                     console.log("err");
                 }
             });
-        });
+        }
     });

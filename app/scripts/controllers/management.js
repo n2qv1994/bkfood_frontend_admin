@@ -8,8 +8,11 @@
  * Controller of the bkfoodadminApp
  */
 angular.module('bkfoodadminApp')
-    .controller('ManagementCtrl', function($scope) {
+    .controller('ManagementCtrl', function($scope,$rootScope) {
         var product_id = "";
+        if ($rootScope.admin == 'admin') {
+            $('.admin').show();
+        }
         $.ajax({
             url: "http://localhost:3000/api/getallproduct",
             type: "get",
